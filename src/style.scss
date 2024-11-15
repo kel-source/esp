@@ -35,10 +35,15 @@ $transition: 0.3s ease-in-out;
         @content;
     }
 }
+@mixin xl {
+    @media (min-width: $max-width) {
+        @content;
+    }
+}
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 140px;
+    scroll-padding-top: 75px;
     overflow-x: hidden !important;
 }
 
@@ -492,6 +497,14 @@ header {
         }
     }
 
+    .row-type-banner {
+        .row-inner {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+    }
+
     .row-type-images {
         .row-inner {
             &.half-pd-top {
@@ -738,6 +751,51 @@ header {
 
             .text-wrap {
                 margin-top: $text-padding;
+            }
+        }
+    }
+
+    .row-type-fw-img {
+        .row-inner {
+            padding: 0;
+
+            img {
+                width: 100%;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+                position: relative;
+            }
+        }
+
+        .col-12 {
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 0; bottom: 0;
+                width: 100px;
+                z-index: 2;
+            }
+        }
+
+        .col-12::before {
+            left: -100px;
+            background-image: linear-gradient(to right, $black, transparent 50px);
+            transition: left $transition;
+        }
+
+        .col-12::after {
+            right: -100px;
+            background-image: linear-gradient(to left , $black, transparent 50px);
+            transition: right $transition;
+        }
+
+        @include xl {
+            .col-12::before {
+                left: 0;
+            }
+
+            .col-12::after {
+                right: 0;
             }
         }
     }

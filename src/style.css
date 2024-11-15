@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 140px;
+  scroll-padding-top: 75px;
   overflow-x: hidden !important;
 }
 
@@ -379,6 +379,11 @@ header nav .menu-wrap .book-now .btn {
     text-align: center;
   }
 }
+.content .row-type-banner .row-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
 .content .row-type-images .row-inner.half-pd-top {
   padding-top: 25px;
 }
@@ -568,6 +573,42 @@ header nav .menu-wrap .book-now .btn {
 }
 .content .row-type-projects .project .text-wrap {
   margin-top: 20px;
+}
+.content .row-type-fw-img .row-inner {
+  padding: 0;
+}
+.content .row-type-fw-img .row-inner img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}
+.content .row-type-fw-img .col-12::before, .content .row-type-fw-img .col-12::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+}
+.content .row-type-fw-img .col-12::before {
+  left: -100px;
+  background-image: linear-gradient(to right, #0F1211, transparent 50px);
+  transition: left 0.3s ease-in-out;
+}
+.content .row-type-fw-img .col-12::after {
+  right: -100px;
+  background-image: linear-gradient(to left, #0F1211, transparent 50px);
+  transition: right 0.3s ease-in-out;
+}
+@media (min-width: 1400px) {
+  .content .row-type-fw-img .col-12::before {
+    left: 0;
+  }
+  .content .row-type-fw-img .col-12::after {
+    right: 0;
+  }
 }
 
 [title="Enter fullscreen"] {
