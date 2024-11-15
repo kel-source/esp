@@ -80,8 +80,14 @@ body .row-inner {
 body .row-inner.no-pd-top {
   padding-top: 0 !important;
 }
+body .row-inner.half-pd-top {
+  padding-top: 50px;
+}
 body .row-inner.no-pd-btm {
   padding-bottom: 0 !important;
+}
+body .row-inner.half-pd-btm {
+  padding-bottom: 50px;
 }
 body .row-intro {
   padding-bottom: 0 !important;

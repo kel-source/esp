@@ -131,9 +131,15 @@ body {
         &.no-pd-top {
             padding-top: 0 !important;
         }
+        &.half-pd-top {
+            padding-top: math.div($top-padding, 2);
+        }
 
         &.no-pd-btm {
             padding-bottom: 0 !important;
+        }
+        &.half-pd-btm {
+            padding-bottom: math.div($top-padding, 2);
         }
     }
 
