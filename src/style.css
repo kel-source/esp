@@ -56,19 +56,28 @@ body .bg-light {
   background-color: #FBFBFB !important;
   color: #0F1211 !important;
 }
-body .bg-light a:hover {
-  color: #6D7275;
+body .bg-light .button-primary:hover {
+  background-color: #0F1211;
+  border-color: #0F1211;
+  color: #FBFBFB;
 }
 body .bg-mid {
   background-color: #6D7275 !important;
   color: #FBFBFB !important;
 }
+body .bg-mid .button-primary:hover {
+  background-color: #FBFBFB;
+  border-color: #FBFBFB;
+  color: #0F1211;
+}
 body .bg-dark {
   background-color: #0F1211 !important;
   color: #FBFBFB !important;
 }
-body .bg-dark a:hover {
-  color: #6D7275;
+body .bg-dark .button-primary:hover {
+  background-color: #FBFBFB;
+  border-color: #FBFBFB;
+  color: #0F1211;
 }
 body .row-inner {
   width: 100%;
@@ -147,7 +156,8 @@ body a.button-primary {
   width: fit-content;
   padding: 10px 15px;
   border: 2px solid;
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 body a.button-primary:hover {
   text-decoration: none;
