@@ -121,11 +121,26 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   line-height: 1em;
 }
 body p {
-  margin-bottom: 0 !important;
   line-height: 1.4em;
 }
-body a {
+body p:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+body a:not(.button-primary) {
   transition: color 0.3s ease-in-out;
+  color: inherit;
+  text-decoration: underline;
+}
+body .button-primary {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px 15px;
+  border: 2px solid;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+body .button-primary:hover {
+  text-decoration: none;
 }
 body .fa {
   font-family: FontAwesome;
@@ -135,7 +150,6 @@ body .fa {
 body br {
   content: " ";
   display: block;
-  margin-bottom: 20px;
 }
 @media (max-width: 650px) {
   body .row:not(.row-type-images, .row-type-award-banner, .row-type-question) .row-inner {
@@ -399,10 +413,6 @@ header nav .menu-wrap .book-now .btn {
 .content .row-type-half-half .col.content-wrap h1, .content .row-type-half-half .col.content-wrap h2 {
   margin-bottom: 20px;
 }
-.content .row-type-half-half .col.content-wrap a {
-  color: #FBFBFB;
-  text-decoration: underline;
-}
 .content .row-type-half-half .col.content-wrap a .fa {
   width: 25px;
 }
@@ -542,6 +552,22 @@ header nav .menu-wrap .book-now .btn {
   height: 120px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.content .row-type-projects .col {
+  display: flex;
+}
+.content .row-type-projects .project {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.content .row-type-projects .project img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content .row-type-projects .project .text-wrap {
+  margin-top: 20px;
 }
 
 [title="Enter fullscreen"] {

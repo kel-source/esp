@@ -176,12 +176,29 @@ body {
     }
 
     p {
-        margin-bottom: 0 !important;
         line-height: 1.4em;
+
+        &:not(:last-of-type) {
+            margin-bottom: $text-padding;
+        }
     }
 
-    a {
+    a:not(.button-primary) {
         transition: color $transition;
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    .button-primary {
+        display: block;
+        width: fit-content;
+        padding: 10px 15px;
+        border: 2px solid;
+        transition: background-color $transition, color $transition;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     .fa {
@@ -193,7 +210,6 @@ body {
     br {
         content: " ";
         display: block;
-        margin-bottom: $text-padding;
     }
 
 
@@ -522,10 +538,7 @@ header {
                 margin-bottom: $text-padding;
             }
     
-            a {
-                color: $white;
-                text-decoration: underline;
-    
+            a {    
                 .fa {
                     width: 25px;
                 }
@@ -704,6 +717,27 @@ header {
                     height: 120px;
                     object-fit: cover;
                 }
+            }
+        }
+    }
+
+    .row-type-projects {
+        .col {
+            display: flex;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .text-wrap {
+                margin-top: $text-padding;
             }
         }
     }
