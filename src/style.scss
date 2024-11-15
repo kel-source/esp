@@ -350,6 +350,7 @@ header {
 
                 .logo {
                     img {
+                        height: math.div($logo-height, 1.5);
                         width: math.div($logo-width, 1.5);
                     }
                 }

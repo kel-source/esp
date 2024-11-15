@@ -258,6 +258,7 @@ header nav.sm-nav {
     height: 76px;
   }
   header nav.sm-nav .logo img {
+    height: 40px;
     width: 40px;
   }
   header nav.sm-nav .navbar-toggler {
