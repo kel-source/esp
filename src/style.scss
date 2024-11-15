@@ -268,7 +268,7 @@ header {
     z-index: 2;
 
     nav {
-        height: $logo-height + ($nav-top-padding * 2);
+        height: $nav-height;
 
         .nav-inner {
             max-width: $max-width;
@@ -292,6 +292,7 @@ header {
         
         .logo {
             img {
+                height: $logo-height;
                 width: $logo-width;
             }
         }
