@@ -183,7 +183,7 @@ body br {
 }
 
 header, body, .content, footer {
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
 }
 
@@ -252,6 +252,8 @@ header nav.sm-nav {
   }
   header nav.sm-nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 76px;
   }
   header nav.sm-nav .logo img {
@@ -370,8 +372,13 @@ header nav .menu-wrap .book-now .btn {
 .content {
   display: flex;
   flex-direction: column;
-  padding-top: 60px;
+  padding-top: 95px;
   flex: 1;
+}
+@media (max-width: 650px) {
+  .content {
+    padding-top: 75px !important;
+  }
 }
 .content .row-type-hero h1, .content .row-type-page-introduction h1 {
   font-size: 75px;
@@ -587,7 +594,7 @@ header nav .menu-wrap .book-now .btn {
   margin-top: 20px;
 }
 .content .row-type-fw-img .row-inner {
-  padding: 0;
+  padding: 0 !important;
 }
 .content .row-type-fw-img .row-inner img {
   width: 100%;
@@ -629,7 +636,7 @@ header nav .menu-wrap .book-now .btn {
 
 footer {
   z-index: 1;
-  margin-top: auto;
+  margin-top: -1px;
 }
 footer .footer-inner {
   max-width: 1400px;

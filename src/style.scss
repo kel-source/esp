@@ -259,7 +259,7 @@ body {
 }
 
 header, body, .content, footer {
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
 }
 
@@ -343,6 +343,8 @@ header {
             }
             &.sm-nav {
                 display: flex;
+                justify-content: space-between;
+                align-items: center;
                 height: math.div($nav-height, 1.25);
 
                 .logo {
@@ -487,8 +489,12 @@ header {
 .content {
     display: flex;
     flex-direction: column;
-    padding-top: $logo-height;
+    padding-top: $nav-height;
     flex: 1;
+
+    @include sm {
+        padding-top: 75px !important;
+    }
 
     .row-type-hero, .row-type-page-introduction {
         h1 {
@@ -771,7 +777,7 @@ header {
 
     .row-type-fw-img {
         .row-inner {
-            padding: 0;
+            padding: 0 !important;
 
             img {
                 width: 100%;
@@ -822,7 +828,7 @@ header {
 
 footer {
     z-index: 1;
-    margin-top: auto;
+    margin-top: -1px;
 
     .footer-inner {
         max-width: $max-width;
