@@ -27,6 +27,7 @@ $logo-height: 60px;
 $logo-width: 60px;
 
 $black: #0F1211;
+$black-opacity: rgb(15, 18, 17, 0.2);
 $mid: #6D7275;
 $white: #FBFBFB;
 
@@ -747,16 +748,60 @@ header {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            text-decoration: none;
 
-            img {
-                width: 100%;
-                object-fit: cover;
+            .image-wrap {
+                position: relative;
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 16/9;
+                    object-fit: cover;
+                }
+
+                &::after {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    background-color: $black-opacity;
+                    transition: opacity $transition;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            a.image-wrap {
+                &::after {
+                    content: 'Visit site';
+                }
+    
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            
+            div.image-wrap {
+                &::after {
+                    content: 'Not this one';
+                }
             }
 
             .text-wrap {
                 margin-top: $text-padding;
             }
         }
+
+
 
         @include sm {
             .col-6:last-of-type {
