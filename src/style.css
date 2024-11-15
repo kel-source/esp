@@ -603,7 +603,7 @@ header nav .menu-wrap .book-now .btn {
   cursor: pointer;
 }
 .content .row-type-projects .project div.image-wrap::after {
-  content: "Not this one";
+  content: "You can't visit this one, chick";
 }
 .content .row-type-projects .project .text-wrap {
   margin-top: 20px;

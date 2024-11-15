@@ -783,7 +783,7 @@ header {
 
             a.image-wrap {
                 &::after {
-                    content: 'Visit site';
+                    content: "Visit site";
                 }
     
                 &:hover {
@@ -793,7 +793,7 @@ header {
             
             div.image-wrap {
                 &::after {
-                    content: 'Not this one';
+                    content: "You can't visit this one, chick";
                 }
             }
 
