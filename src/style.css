@@ -589,6 +589,7 @@ header nav .menu-wrap .book-now .btn {
   width: 100%;
   height: 100%;
   opacity: 0;
+  color: #0F1211;
   background-color: rgba(15, 18, 17, 0.2);
   transition: opacity 0.3s ease-in-out;
 }

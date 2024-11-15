@@ -27,7 +27,7 @@ $logo-height: 60px;
 $logo-width: 60px;
 
 $black: #0F1211;
-$black-opacity: rgb(15, 18, 17, 0.2);
+$black-opacity: rgba(15, 18, 17, 0.2);
 $mid: #6D7275;
 $white: #FBFBFB;
 
@@ -769,6 +769,7 @@ header {
                     width: 100%;
                     height: 100%;
                     opacity: 0;
+                    color: $black;
                     background-color: $black-opacity;
                     transition: opacity $transition;
                 }
@@ -800,8 +801,6 @@ header {
                 margin-top: $text-padding;
             }
         }
-
-
 
         @include sm {
             .col-6:last-of-type {
