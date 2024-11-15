@@ -5,6 +5,8 @@ $max-width: 1400px;
 $top-padding: 100px;
 $side-padding: 25px;
 
+$half-top-padding: math.div($top-padding, 2);
+
 $top-padding-sm: 50px;
 $side-padding-sm: $side-padding;
 
@@ -27,6 +29,8 @@ $logo-width: 60px;
 $black: #0F1211;
 $mid: #6D7275;
 $white: #FBFBFB;
+
+$alert-red: #8B0000;
 
 $border-radius: 5px;
 
@@ -144,14 +148,14 @@ body {
             padding-top: 0 !important;
         }
         &.half-pd-top {
-            padding-top: math.div($top-padding, 2);
+            padding-top: $half-top-padding;
         }
 
         &.no-pd-btm {
             padding-bottom: 0 !important;
         }
         &.half-pd-btm {
-            padding-bottom: math.div($top-padding, 2);
+            padding-bottom: $half-top-padding;
         }
     }
 
@@ -805,11 +809,76 @@ header {
             }
         }
     }
+
+    .row-type-business {
+        .section {
+            margin-top: $text-padding * 2;
+            padding-top: $text-padding * 2;
+            border-top: 1px solid;
+
+            
+            .button-primary {
+                margin-top: $text-padding;
+            }
+
+            .alert-note {
+                border: 2px solid $alert-red;
+                padding: 5px 10px;
+                width: fit-content;
+            }
+        }
+
+        .email-template {
+            border: 2px solid;
+            margin-top: $half-top-padding;
+            padding: 0 $text-padding;
+    
+            p {
+                padding: 10px 0;
+                margin: 0;
+            }
+    
+            .to, .subject {
+                position: relative;
+                border-bottom: 1px solid;
+                padding: 15px 0;
+            }
+    
+            .to::before {
+                content: 'To ';
+                font-weight: 700;
+            }
+            .subject::before {
+                content: 'Subject ';
+                font-weight: 700;
+            }
+    
+            .body {
+                padding: 15px 0;
+            }
+        }
+    }
 }
 
 // specific to .row-type-gallery fullscreen ability
 [title="Enter fullscreen"] {
     display: none !important;
+}
+
+// specific to hidden text reveal by button click ability
+#hiddenButton {
+    &:hover {
+        cursor: pointer;
+    }
+}
+#hiddenText {
+    overflow-y: hidden;
+    max-height: 500px;
+    transition: max-height $transition;
+
+    &.hidden {
+        max-height: 0px;
+    }
 }
 
 footer {

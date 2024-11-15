@@ -129,8 +129,24 @@
         }
     });
 //
+
+// HIDDEN TEXT REVEAL BY BUTTON CLICK (see business anchor section on dev page)
+const hiddenText = document.querySelector('#hiddenText');
+const hiddenButton = document.querySelector('#hiddenButton');
+
+hiddenButton.addEventListener('click', () => {
+    hiddenText.classList.toggle('hidden');
+
+    if (hiddenText.classList.contains('hidden')) {
+        hiddenButton.innerHTML = 'Show me the template!';
+    } else {
+        hiddenButton.innerHTML = 'Hide the template!';
+    }
+});
+// 
   
 // ROW-TYPE-TICKER
+// nothing below this because it's erroring out
 var ticker = document.querySelector('.ticker');
     list = document.querySelector('.ticker-list');
     clone = list.cloneNode(true);

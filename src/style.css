@@ -618,9 +618,61 @@ header nav .menu-wrap .book-now .btn {
     right: 0;
   }
 }
+.content .row-type-business .section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid;
+}
+.content .row-type-business .section .button-primary {
+  margin-top: 20px;
+}
+.content .row-type-business .section .alert-note {
+  border: 2px solid #8B0000;
+  padding: 5px 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.content .row-type-business .email-template {
+  border: 2px solid;
+  margin-top: 50px;
+  padding: 0 20px;
+}
+.content .row-type-business .email-template p {
+  padding: 10px 0;
+  margin: 0;
+}
+.content .row-type-business .email-template .to, .content .row-type-business .email-template .subject {
+  position: relative;
+  border-bottom: 1px solid;
+  padding: 15px 0;
+}
+.content .row-type-business .email-template .to::before {
+  content: "To ";
+  font-weight: 700;
+}
+.content .row-type-business .email-template .subject::before {
+  content: "Subject ";
+  font-weight: 700;
+}
+.content .row-type-business .email-template .body {
+  padding: 15px 0;
+}
 
 [title="Enter fullscreen"] {
   display: none !important;
+}
+
+#hiddenButton:hover {
+  cursor: pointer;
+}
+
+#hiddenText {
+  overflow-y: hidden;
+  max-height: 500px;
+  transition: max-height 0.3s ease-in-out;
+}
+#hiddenText.hidden {
+  max-height: 0px;
 }
 
 footer {
