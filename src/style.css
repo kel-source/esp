@@ -189,7 +189,7 @@ header, body, .content, footer {
 
 header {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 header nav {
   height: 95px;
