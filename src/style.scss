@@ -8,8 +8,8 @@ $side-padding: 25px;
 $top-padding-sm: 50px;
 $side-padding-sm: $side-padding;
 
-$logo-height: 75px;
-$logo-width: 75px;
+$logo-height: 50px;
+$logo-width: 50px;
 
 $nav-top-padding: 10px;
 $nav-height: $logo-height + ($nav-top-padding * 2);
@@ -193,27 +193,33 @@ body {
         &:not(:last-of-type) {
             margin-bottom: $text-padding;
         }
-    }
+    } 
 
-    a:not(.button-primary) {
-        transition: color $transition;
-        color: inherit;
-        text-decoration: underline;
-    }
+    a {
+        &:has(.fa-icon) {
+            text-decoration: none !important;
+        }
 
-    .button-primary {
-        display: block;
-        width: fit-content;
-        padding: 10px 15px;
-        border: 2px solid;
-        transition: background-color $transition, color $transition;
+        &:not(.button-primary) {
+            transition: color $transition;
+            color: inherit;
+            text-decoration: underline;
+        }
 
-        &:hover {
-            text-decoration: none;
+        &.button-primary {
+            display: block;
+            width: fit-content;
+            padding: 10px 15px;
+            border: 2px solid;
+            transition: background-color $transition, color $transition;
+    
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 
-    .fa {
+    .fa-icon {
         font-family: FontAwesome;
         font-style: normal;
         font-weight: 500;
@@ -270,6 +276,30 @@ header {
     nav {
         height: $nav-height;
 
+        .back-to-home {
+            position: relative;
+            display: block;
+            width: 25px;
+            height: 25px;
+
+            i {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                transition: left $transition;
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: inherit;
+
+                i {
+                    left: -3px;
+                }
+            }
+        }
+
         .nav-inner {
             max-width: $max-width;
             display: flex;
@@ -278,23 +308,6 @@ header {
             margin: 0 auto;
             padding-left: $side-padding - 7px;
             padding-right: $side-padding;
-
-            a:not(.btn) {
-                color: $white;
-            }
-
-            .btn {
-                &:hover {
-                    cursor: auto;
-                }
-            }
-        }
-        
-        .logo {
-            img {
-                height: $logo-height;
-                width: $logo-width;
-            }
         }
 
         div {
@@ -303,8 +316,6 @@ header {
             align-items: center;
 
             .menu-item {
-                padding-top: 10px;
-                padding-bottom: 10px;
                 text-decoration: none;
 
                 &:not(:first-of-type) {
@@ -313,20 +324,6 @@ header {
 
                 &:not(:last-of-type) {
                     padding-right: 15px;
-                }
-
-                &.active {
-                    position: relative;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 7px;
-                        left: 0;
-                        width: 100%;
-                        height: 2px;
-                        background-color: $white;
-                    }
                 }
             }
         }
@@ -345,14 +342,6 @@ header {
             &.sm-nav {
                 display: flex;
                 align-items: center;
-                height: math.div($nav-height, 1.25);
-
-                .logo {
-                    img {
-                        height: math.div($logo-height, 1.5);
-                        width: math.div($logo-width, 1.5);
-                    }
-                }
             }
         }
     }
@@ -452,10 +441,6 @@ header {
     padding-top: $nav-height;
     flex: 1;
 
-    @include sm {
-        padding-top: 75px !important;
-    }
-
     .row-type-hero, .row-type-page-introduction {
         h1 {
             font-size: 75px;
@@ -532,7 +517,7 @@ header {
             }
     
             a {    
-                .fa {
+                .fa-icon {
                     width: 25px;
                 }
             }
@@ -733,6 +718,12 @@ header {
                 margin-top: $text-padding;
             }
         }
+
+        @include sm {
+            .col-6:last-of-type {
+                padding-top: $top-padding-sm;
+            }
+        }
     }
 
     .row-type-fw-img {
@@ -813,8 +804,6 @@ footer {
 
     .socials {
         a {
-            text-decoration: none;
-
             &:not(:first-of-type) {
                 padding-left: 3px;
             }

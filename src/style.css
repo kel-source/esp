@@ -133,12 +133,15 @@ body p {
 body p:not(:last-of-type) {
   margin-bottom: 20px;
 }
+body a:has(.fa-icon) {
+  text-decoration: none !important;
+}
 body a:not(.button-primary) {
   transition: color 0.3s ease-in-out;
   color: inherit;
   text-decoration: underline;
 }
-body .button-primary {
+body a.button-primary {
   display: block;
   width: -moz-fit-content;
   width: fit-content;
@@ -146,10 +149,10 @@ body .button-primary {
   border: 2px solid;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-body .button-primary:hover {
+body a.button-primary:hover {
   text-decoration: none;
 }
-body .fa {
+body .fa-icon {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: 500;
@@ -192,7 +195,27 @@ header {
   z-index: 3;
 }
 header nav {
-  height: 95px;
+  height: 70px;
+}
+header nav .back-to-home {
+  position: relative;
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+header nav .back-to-home i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: left 0.3s ease-in-out;
+  font-size: 20px;
+}
+header nav .back-to-home:hover {
+  color: inherit;
+}
+header nav .back-to-home:hover i {
+  left: -3px;
 }
 header nav .nav-inner {
   max-width: 1400px;
@@ -203,24 +226,12 @@ header nav .nav-inner {
   padding-left: 18px;
   padding-right: 25px;
 }
-header nav .nav-inner a:not(.btn) {
-  color: #FBFBFB;
-}
-header nav .nav-inner .btn:hover {
-  cursor: auto;
-}
-header nav .logo img {
-  height: 60px;
-  width: 60px;
-}
 header nav div {
   height: 100%;
   display: flex;
   align-items: center;
 }
 header nav div .menu-item {
-  padding-top: 10px;
-  padding-bottom: 10px;
   text-decoration: none;
 }
 header nav div .menu-item:not(:first-of-type) {
@@ -228,18 +239,6 @@ header nav div .menu-item:not(:first-of-type) {
 }
 header nav div .menu-item:not(:last-of-type) {
   padding-right: 15px;
-}
-header nav div .menu-item.active {
-  position: relative;
-}
-header nav div .menu-item.active::after {
-  content: "";
-  position: absolute;
-  bottom: 7px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #FBFBFB;
 }
 header nav.lg-nav {
   display: block;
@@ -254,11 +253,6 @@ header nav.sm-nav {
   header nav.sm-nav {
     display: flex;
     align-items: center;
-    height: 76px;
-  }
-  header nav.sm-nav .logo img {
-    height: 40px;
-    width: 40px;
   }
 }
 header nav .menu-wrap {
@@ -339,13 +333,8 @@ header nav .menu-wrap .book-now .btn {
 .content {
   display: flex;
   flex-direction: column;
-  padding-top: 95px;
+  padding-top: 70px;
   flex: 1;
-}
-@media (max-width: 650px) {
-  .content {
-    padding-top: 75px !important;
-  }
 }
 .content .row-type-hero h1, .content .row-type-page-introduction h1 {
   font-size: 75px;
@@ -404,7 +393,7 @@ header nav .menu-wrap .book-now .btn {
 .content .row-type-half-half .col.content-wrap h1, .content .row-type-half-half .col.content-wrap h2 {
   margin-bottom: 20px;
 }
-.content .row-type-half-half .col.content-wrap a .fa {
+.content .row-type-half-half .col.content-wrap a .fa-icon {
   width: 25px;
 }
 .content .row-type-half-half .col.content-wrap .links {
@@ -560,6 +549,11 @@ header nav .menu-wrap .book-now .btn {
 .content .row-type-projects .project .text-wrap {
   margin-top: 20px;
 }
+@media (max-width: 650px) {
+  .content .row-type-projects .col-6:last-of-type {
+    padding-top: 50px;
+  }
+}
 .content .row-type-fw-img .row-inner {
   padding: 0 !important;
 }
@@ -621,9 +615,6 @@ footer .footer-inner .open-source a {
 }
 footer .fa {
   font-size: 18px !important;
-}
-footer .socials a {
-  text-decoration: none;
 }
 footer .socials a:not(:first-of-type) {
   padding-left: 3px;
