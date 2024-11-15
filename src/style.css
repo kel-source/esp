@@ -260,7 +260,7 @@ header nav div .menu-item:hover {
   color: inherit;
 }
 header nav div .menu-item:hover::after {
-  width: calc(100% + 10px);
+  width: calc(100% + 6px);
 }
 header nav div .menu-item:not(:first-of-type) {
   margin-left: 15px;
